@@ -208,6 +208,11 @@ input[type=button]:hover, button:hover {
     background-color: #291f6c;
 }
 
+button#atualizar {
+    background-color: #45a049;
+    border: solid;
+}
+
 fieldset {
     border: 0.5px dotted #372991;
 }
