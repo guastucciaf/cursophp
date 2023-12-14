@@ -13,6 +13,7 @@
         $reais = $_GET["valor"];
         $cota = 4.92;
         $dolar = $reais/$cota;
+        $dolar = number_format($dolar, 2, '.', '');
         echo "Seus R$$reais equivalem a $$dolar \n";
         echo "<p><strong>Cotação fixa de R$$cota</strong> inserida diretamente no código.</p>";
         ?>
