@@ -8,11 +8,11 @@
 </head>
 <body>
     <main>
-        <h1>Trabalhando com numeros aleatorios</h1>
-        <p>Gerando um numero aleatorio entre 0 e 100...</p>
+        <h1>Trabalhando com números aleatórios</h1>
+        <p>Gerando um número aleatório entre <strong>0</strong> e <strong>100</strong>...</p>
         <?php
         $num = mt_rand(0,100);
-        echo "<p>O número sorteado foi $num</p> <br>";
+        echo "<p>O número sorteado foi <strong>$num</strong></p> <br>";
         
         ?>
         <button id="atualizar" onclick="javascript:location.reload()">&#x1F503 Sortear novo número</button>
