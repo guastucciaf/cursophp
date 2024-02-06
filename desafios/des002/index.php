@@ -12,6 +12,7 @@
         <p>Gerando um número aleatório entre <strong>0</strong> e <strong>100</strong>...</p>
         <?php
         $num = mt_rand(0,100);
+        // random_int() - utilizado para gerar números aleatórios criptograficamente seguros [MAIS LENTO].
         echo "<p>O número sorteado foi <strong>$num</strong></p> <br>";
         
         ?>
