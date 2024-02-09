@@ -8,8 +8,11 @@
 </head>
 <body>
     <main>
+        
         <h1>Conversor de moeda v1.0</h1>
         <?php 
+        /* CÓDIGO DESENVOLVIDO DE FORMA RUDIMENTAR POR MIM
+ 
         $reais = $_GET["valor"];
         $cota = 4.92;
         $dolar = $reais/$cota;
@@ -18,7 +21,11 @@
         $reais = number_format($reais, 2, ',', '.');
         echo "Seus R$$reais equivalem a $$dolar \n";
         echo "<p><strong>Cotação fixa de R$$cota</strong> inserida diretamente no código.</p>";
+        */
+        // FORMATAÇÃO DE MOEDAS COM BIBLIOTECA DE INTERNACIONALIZAÇÃO
+        
         ?>
+        
         <p>
             <a href="./index.html">Clique aqui para nova conversão</a>
         </p>
