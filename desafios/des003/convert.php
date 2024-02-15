@@ -14,7 +14,7 @@
         /* CÓDIGO DESENVOLVIDO DE FORMA RUDIMENTAR POR MIM
  
         $reais = $_GET["valor"];
-        $cota = 4.92;
+        $cota = 4.97;
         $dolar = $reais/$cota;
         $dolar = number_format($dolar, 2, '.', '');
         $cota = number_format($cota, 2, ',', '.');
@@ -24,12 +24,32 @@
         */
         // FORMATAÇÃO DE MOEDAS COM BIBLIOTECA DE INTERNACIONALIZAÇÃO
         
+        //Cotação copiada do Google
+        $cotação = 4.97;
+
+        //Quantos reais você tem?
+        $reais = $_GET["valor"] ?? 0;
+
+        //Equivalencia em dolar
+        $dolar = $reais/$cotação;
+
+
+        //Formatação de moedas com internacionalização
+        //Biblioteca intl (Internalization PHP)
+
+        $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+
+        echo "Seus " . numfmt_format_currency($padrao, $reais, "BRL") . " equivalem a " . numfmt_format_currency($padrao, $dolar, "USD");
+
+
         ?>
-        
+        <!-- Sugerido pelo Guanabara, mas retorna com o formulario preenchido com o valor anterior
+        <button onclick="javascript:history.go(-1)">Voltar</button>
+        -->
         <p>
             <a href="./index.html">Clique aqui para nova conversão</a>
         </p>
-        
+
     </main>
 </body>
 </html>
