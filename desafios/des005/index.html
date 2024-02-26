@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Analisador de números reais</title>
 </head>
 <body>
-    <h1>Analisador de número real</h1>
-    <form action="analisador.php" method="get">
-        <label for="valor"></label>
-    </form>
+    <main>
+        <h1>Analisador de número real</h1>
+        <form action="analisador.php" method="get">
+            <label for="valor">Número real: </label>
+            <input type="number" name="valor" id="idvalor" step="0.001">
+            <input type="submit" value="Analisar">
+        </form>
+    </main>
 </body>
 </html>
