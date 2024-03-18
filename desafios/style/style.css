@@ -110,7 +110,6 @@ table.divisao td {
     padding: 20px;
     text-align: center;
     font-size: 2.5em;
-    
 }
 
 table.divisao  tr:nth-child(1) td:nth-child(2) {
@@ -130,16 +129,9 @@ ul > li::marker {
     color: #372991;
 }
 
-table.divisão.abbr [title] {
-    border-bottom: none;
-    cursor: inherit;
-    text-decoration: none;
-}
-
 /* ELEMENTOS DE FORMULÁRIO */
 
 form {
-    font-weight: bolder;
     background-color: rgba(55, 41, 145, 0.2);
     padding: 15px;
     border-radius: 10px;
@@ -230,7 +222,6 @@ fieldset > legend {
 
 input[type=radio] + label, input[type=checkbox] + label {
     display: inline-block;
-    font-weight: bolder; 
     font-size: 1em;
     background-color: rgba(0, 0, 0, 0);
 }

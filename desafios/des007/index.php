@@ -9,26 +9,24 @@
 <body>
 </form>
     <?php 
-    $sal_min=1412;
+    $sal_min=1_412.00;
     $moeda_corrente= numfmt_create("pt-BR", NUMBERFORMATTER::CURRENCY);
-    $seu_sal = $_GET ["seu_sal"];
+    $seu_sal = $_POST ["seu_sal"];
 
     ?>
     <main>
         <h1>Informe seu salário</h1>
-        <form action="<?=$_SERVER ['PHP_SELF']?>" method="get">
+        <form action="<?=$_SERVER ['PHP_SELF']?>" method="post">
             <label for="seu_sal">Salário (R$)</label>
-            <input type="number" name="seu_sal" id="seu_sal">
-            <?php
-                echo "<p>Considerando o salário mínimo de <strong>".numfmt_format_currency ($moeda_corrente,$sal_min,"BRL")."</strong></p>";
-            ?>
+            <input type="number" name="seu_sal" id="seu_sal" step="0.01" value=<?=$seu_sal?>>
+            <p>Considerando o salário mínimo de <strong><?=numfmt_format_currency ($moeda_corrente,$sal_min,"BRL")?></strong></p>
             <input type="submit" value="Calcular">
         </form>
     <section>
         <h2>Resultado Final</h2>
         <?php 
         $qtd_sal= (int) ($seu_sal / $sal_min);
-        $rest_sal= $seu_sal - ($qtd_sal * $sal_min);
+        $rest_sal= $seu_sal - ($sal_min*$qtd_sal);
         echo "<p>Quem recebe um salário de <strong>".numfmt_format_currency ($moeda_corrente,$seu_sal,"BRL")."</strong> ganha <strong>".$qtd_sal." salários mínimos + ".numfmt_format_currency ($moeda_corrente,$rest_sal,"BRL")."</strong>.";
         ?>
         
