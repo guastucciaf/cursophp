@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-</form>
     <?php 
     $sal_min=1_412.00;
     $moeda_corrente= numfmt_create("pt-BR", NUMBERFORMATTER::CURRENCY);
