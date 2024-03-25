@@ -7,22 +7,27 @@
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <?php 
-        $valor = $_GET ["valor"];
-    ?>
+<?php 
+    $numero = $_GET['num'];
+    number_format($numero, 3, ',','.');
+?>
     <main>
         <h1>Informe um número</h1>
-        <form action="<?=$SERVER['PHP_SELF']?>" method="get">
-            <label for="valor">Número</label>
-            <input type="number" name="valor" id="valor" step = "0.001" value = <?=$valor?>>
+        <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
+            <label for="num">Número</label>
+            <input type="number" name="num" id="num" step = "0.001" value = <?=$numero?>>
             <input type="submit" value="Calcular Raízes">
 
         </form>
         <section>
             <h2>Resultado Final</h2>
             <?php 
-            echo  "<p>Analizando o <strong>número ".$valor.", temos:";
-            echo "<lu><li>A sua raiz quadrada é ".sqrt($valor)."</lu>";
+            $rquadrada=sqrt($numero);
+            $rcubica=$numero**(1/3);
+            echo  "<p>Analizando o <strong>número ".$numero.",</strong> temos:";
+            echo "<ul>
+                    <li>A sua raiz quadrada é <strong>".number_format($rquadrada, 3, ',','.')."</strong>.
+                    <li>A sua raiz cúbica é <strong>".number_format($rcubica, 3, ',','.')."</strong>.</ul>";
             ?>
             
         </section>
