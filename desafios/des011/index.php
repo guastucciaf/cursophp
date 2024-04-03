@@ -6,6 +6,7 @@
     <title>Desafio PHP 11 - Reajustador de Preços</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
+
 <body>
     <?php 
     $price = $_GET ['price'] ?? 0;
@@ -31,6 +32,7 @@
     <h2>Resultado do Reajuste</h2>
     <p>O produto que custava <?=numfmt_format_currency($padrao,$price,"BRL")?>, com reajuste de <strong><?=$adjustment?>%</strong> vai passar a custar <strong><?=numfmt_format_currency($padrao,$newPrice,"BRL")?></strong> a partir de agora.</p>
     </section>
+    
     <script>
         //Declarações automaticas
         mudaValor();
