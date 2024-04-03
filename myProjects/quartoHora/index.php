@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio PHP 12 - Calculadora de Tempo</title>
+    <title>Calculadora de Quarto de hora</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
         <h1>Calculadora de Tempo</h1>
         <form action="<?=$_SERVER ['PHP_SELF']?>" method="get">
         <label for="second">Qual é o total de segundos?</label>
-        <input type="number" name="second" id="second" min="0" step="1" required value="<?=$total?>">
+        <input type="time" name="second" id="second" min="0" step="1" required value="<?=$total?>">
         <input type="submit" value="Calcular">
         <label for=""></label>
 
