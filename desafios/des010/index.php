@@ -9,7 +9,7 @@
 <body>
     <?php 
     $anoatual = date("Y");
-    $anonasc = $_GET ['anonasc'] ?? $anoatual-1;
+    $anonasc = $_GET ['anonasc'] ?? $anoatual;
     $anovait = $_GET ['anovait'] ?? $anoatual;
     ?>
     <main>
@@ -17,7 +17,7 @@
         
         <form action="<?=$_SERVER ['PHP_SELF']?>" method="get">
         <label for="anonasc">Em que ano você nasceu?</label>
-        <input type="number" name="anonasc" id="anonasc" value="<?=$anonasc?>" max="<?=$anoatual-1?>">
+        <input type="number" name="anonasc" id="anonasc" value="<?=$anonasc?>" max="<?=$anoatual?>">
         <label for="anovait">Quer saber sua idade em que ano? (atualmente estamos em <strong><?=$anoatual?></strong>)</label>
         <input type="number" name="anovait" id="anovait" value="<?=$anovait?>" min="<?=$anoatual?>">
         <input type="submit" value="Qual será minha idade?">
