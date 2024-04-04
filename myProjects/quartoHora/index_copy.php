@@ -11,21 +11,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <?php 
-    $qtdsetor = $_GET ['qtdsetor'] ?? 1;
-    $horaIn = $_GET ['horaIn'];
-    $horaFn = $_GET ['horaFn'];
+    $qtdsetor = $_GET ["qtdsetor"];
+    $horaIn = $_GET ["horaIn"];
+    $horaFn = $_GET ["horaFn"];
         
     ?>
     
     <main>
         <h1>Quartos de hora</h1>
         <form action="<?=$_SERVER ['PHP_SELF']?>" method="get">
-        <label for="second">Quantos turnos no setor? (<span id="counter"></span>)</label>
+        <label for="qtdsetor">Quantos turnos no setor? (<span id="counter"> </span>)</label>
         <input type="range" name="qtdsetor" id="qtdsetor" min="1" max="10" step="1" oninput="mudaValor()" value="<?=$qtdsetor?>">
         <label for="horaIn">Horário Inicial</label>
-        <input type="datetime-local" name="horaIn" id="horaIn">
+        <input type="datetime-local" name="horaIn" id="horaIn" value="<?=$horaIn?>">
         <label for="horaFn">Horário Final</label>
-        <input type="datetime-local" name="horaFn" id="horaFn">
+        <input type="datetime-local" name="horaFn" id="horaFn" value="<?=$horaFn?>">
         <input type="submit" value="Calcular">
         
 
@@ -34,8 +34,7 @@
 
     <section>
         <?php 
-        $horaTotal = $horaIn->diff($horaFn);
-
+        var_dump($horaIn);
         ?>
     <h2>Resultado</h2>
     <p>Tempo de cada turno é <?=$horaTotal?></p>
