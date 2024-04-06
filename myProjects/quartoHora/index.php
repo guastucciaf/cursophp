@@ -49,19 +49,17 @@
     
     <?php 
     
+    //Função para demonstrar os turnos em hora:
+    $horaInPHP = new DateTime($datahoraIn);
+    date_format($horaInPHP, 'H:i');
+    list ($hora, $minuto) = explode (':', $horaIn);
+    $incrementoTurno = ($hora *3600 + $minuto * 60);
 
-    function segundosEmTempo ($horaIn) {
-        $hora = ($horaIn / 3600);
-        $minuto = ($horaIn / 60);
-
-        return sprintf("%d:%02", $hora, $minuto);
-
-    }
     
     echo "<p>Segue a divisão dos QUARTOS DE HORA: <br>";
     $counter = 1;
     while ($counter <= $qtdsetor) :
-        echo $counter."º turno - ".segundosEmTempo($horaIn)."<br>";
+        echo "<strong>".$counter."º turno</strong> - ".($incrementoTurno).":".($incrementoTurno)."<br>";
         $counter++;
         
     endwhile;
