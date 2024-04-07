@@ -41,12 +41,12 @@
     ?>
     
     <h2>Resultado</h2>
-    <p>O tempo total de serviço é de <strong><?=($totalCiclo /60)?> minutos</strong>.</p>
+    <p>O tempo total de serviço é de <strong><?=($totalCiclo /60)?> minutos (<?=($totalCiclo) / 3600?> horas)</strong>.</p>
     <p>Tempo de cada turno é de <strong><?=($tempoTurno / 60)?> minutos</strong>.</p>
     
     <?php 
         
-    echo "<p>Estabelecidos os seguintes QUARTOS DE HORA: <br>";
+    echo "<p>Foram estabelecidos os seguintes QUARTOS DE HORA: <br>";
     $counter = 1;
     
     while ($counter <= $qtdsetor) :
