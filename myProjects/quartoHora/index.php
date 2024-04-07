@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Quarto de hora</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <?php 
-    $qtdsetor = $_GET ["qtdsetor"];
-    $datahoraIn = $_GET ["datahoraIn"];
-    $datahoraFn = $_GET ["datahoraFn"];
+    $qtdsetor = $_REQUEST ["qtdsetor"] ?? 1;
+    $datahoraIn = $_REQUEST ["datahoraIn"] ?? 0;
+    $datahoraFn = $_REQUEST ["datahoraFn"] ?? 0;
         
     ?>
     
     <main>
         <h1>Quartos de hora</h1>
-        <form action="<?=$_SERVER ['PHP_SELF']?>" method="get">
+        <form action="<?=$_SERVER ['PHP_SELF']?>" method="request">
         <label for="qtdsetor">Quantos turnos no setor? (<span id="counter"> </span>)</label>
         <input type="range" name="qtdsetor" id="qtdsetor" min="1" max="10" step="1" oninput="mudaValor()" value="<?=$qtdsetor?>">
         <label for="horaIn">Horário Inicial</label>
@@ -47,7 +46,7 @@
     
     <?php 
         
-    echo "<p>Segue a divisão dos QUARTOS DE HORA: <br>";
+    echo "<p>Estabelecidos os seguintes QUARTOS DE HORA: <br>";
     $counter = 1;
     
     while ($counter <= $qtdsetor) :
