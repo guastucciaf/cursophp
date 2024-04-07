@@ -33,34 +33,30 @@
     </main>
 
     <section>
-        <pre>
-            <?php
-            $horaIn = strtotime ($datahoraIn); //converte a string de data em segundos
-            $horaFn = strtotime ($datahoraFn);
-            $intervaloMinutos = ($horaFn - $horaIn) / 60;
-            $minutosCada = ($intervaloMinutos / $qtdsetor);
-            
-            ?>
-        </pre>
+    
+    <?php
+    $horaIn = strtotime ($datahoraIn); //converte a string de data em segundos
+    $horaFn = strtotime ($datahoraFn);
+    $totalCiclo = ($horaFn - $horaIn);
+    $tempoTurno = ($totalCiclo / $qtdsetor);
+    ?>
     
     <h2>Resultado</h2>
-    <p>O tempo total de serviço é de <strong><?=$intervaloMinutos?> minutos</strong>.</p>
-    <p>Tempo de cada turno é de <strong><?=$minutosCada?> minutos</strong>.</p>
+    <p>O tempo total de serviço é de <strong><?=($totalCiclo /60)?> minutos</strong>.</p>
+    <p>Tempo de cada turno é de <strong><?=($tempoTurno / 60)?> minutos</strong>.</p>
     
     <?php 
-    
-    //Função para demonstrar os turnos em hora:
-    $horaInPHP = new DateTime($datahoraIn);
-    date_format($horaInPHP, 'H:i');
-    list ($hora, $minuto) = explode (':', $horaIn);
-    $incrementoTurno = ($hora *3600 + $minuto * 60);
-
-    
+        
     echo "<p>Segue a divisão dos QUARTOS DE HORA: <br>";
     $counter = 1;
+    
     while ($counter <= $qtdsetor) :
-        echo "<strong>".$counter."º turno</strong> - ".($incrementoTurno).":".($incrementoTurno)."<br>";
+        $cadaQuarto = ($horaIn + $tempoTurno);
+        $horaInFormatada = date('H:i', $horaIn);
+        $cadaQuartoFormatada = date('H:i', $cadaQuarto);
+        echo "<strong>".$counter."º turno</strong> - ".$horaInFormatada." até ".$cadaQuartoFormatada."<br>";
         $counter++;
+        $horaIn = $cadaQuarto;
         
     endwhile;
     ?>
